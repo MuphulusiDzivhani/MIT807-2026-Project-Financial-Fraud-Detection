@@ -1,66 +1,54 @@
-# 📊 💳 MIT809  – Financial Fraud Detection Using Machine Learning and Big Data Analytics
+# Risk-Based Preventive Controls for Financial Transactions
 
-![Made with LaTeX](https://img.shields.io/badge/Made%20with-LaTeX-blue?logo=latex)
-![Big Data](https://img.shields.io/badge/Focus-Big%20Data-orange)
-![Status](https://img.shields.io/badge/Assignment-Completed-brightgreen)
+This repository contains the code and analysis for my MIT 807 mini‑dissertation titled:
 
+**“A Risk‑Based Analytical Framework for Preventive Controls in Financial Transaction Systems Using Machine Learning.”**
 
-This repository contains a mini dissertation research project that investigates how machine learning and big data analytics can be applied to detect and prevent financial fraud in the banking sector, using real-world transaction data.
+The aim of this project is to investigate how machine learning models can be used as *preventive controls* in financial transaction systems by identifying high‑risk transactions before financial loss occurs.
 
-Author: Muphulusi Dzivhani (u18069682)
-Institution: University of Pretoria
-Year: 2026
-Course: MIT807 Research Project
+---
 
-📖 Project Overview
+## Project Overview
 
-Financial fraud poses a major threat to financial institutions and customers globally. This project leverages big data analytics and machine learning models to enhance fraud detection accuracy and minimize false positives in large-scale financial transactions.
+Financial institutions rely on risk‑based controls to prevent fraud while minimising unnecessary disruption to legitimate customers.  
+This study evaluates different machine learning models on transactional data and analyses how their outputs can support preventive decision‑making.
 
-Using the Credit Card Fraud Detection dataset from Kaggle, the study explores how different algorithms can distinguish between legitimate and fraudulent transactions under extreme class imbalance conditions. The research contributes to improving the robustness and interpretability of fraud detection frameworks in real-world financial environments.
+The focus is not only on prediction accuracy, but on:
+- risk scoring,
+- trade‑offs between false positives and false negatives,
+- and model behaviour in highly imbalanced datasets.
 
-🎯 Research Objectives
+---
 
-Analyze the Kaggle credit card dataset to understand transaction behavior patterns.
+## Dataset
 
-Develop machine learning models (Logistic Regression, Random Forest, XGBoost, Neural Networks) for fraud classification.
+The experiments use a publicly available credit card fraud dataset obtained from Kaggle.
 
-Address the class imbalance problem using techniques such as SMOTE and anomaly detection.
+The dataset consists of anonymised transaction records, where each transaction is labelled as either legitimate or fraudulent.  
+No proprietary, employer, or sensitive personal data is used in this project.
 
-Evaluate model performance using metrics such as precision, recall, F1-score, and ROC-AUC.
+---
 
-Propose a scalable framework for early fraud detection using big data analytics.
+## Methodology
 
-❓ Research Questions
+The experimental work follows a standard machine learning workflow:
 
-How effective are machine learning models in detecting fraudulent financial transactions?
+1. Data loading and preprocessing  
+2. Train‑test split and/or cross‑validation  
+3. Model training  
+4. Model evaluation using appropriate metrics for imbalanced data  
+5. Interpretation of results in the context of preventive financial controls  
 
-What impact does data imbalance have on model performance and detection accuracy?
+Baseline and comparative models include:
+- Logistic Regression (interpretable baseline)
+- Tree‑based or ensemble models (for comparison)
 
-Which algorithm provides the best trade-off between accuracy and computational cost?
+Evaluation focuses on metrics such as:
+- Precision
+- Recall
+- ROC‑AUC / PR‑AUC
+rather than overall accuracy.
 
-Can feature engineering and big data analytics improve fraud detection in financial datasets?
+---
 
-🔗 Links
-
-Kaggle Dataset: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-
-GitHub Repository:https://github.com/18069682/MIT807-2026-Project-Financial-Fraud-Detection/new/main?readme=1
-
-🧠 Tools and Technologies
-
-Python (NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch)
-
-SQL for data exploration and feature extraction
-
-Power BI / Tableau for data visualization
-
-Google Colab / Jupyter Notebook for experimentation
-
-LaTeX for dissertation documentation
-
-📝 Author
-
-Muphulusi Dzivhani
-University of Pretoria
-Email: u18069682@tuks.co.za
-Student Number: u18069682
+## Repository Structure
