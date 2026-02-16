@@ -1,31 +1,35 @@
-# Risk-Based Preventive Controls for Financial Transactions
+# MIT807 – A Risk‑Based Analytical Framework for Preventive Controls in Financial Transaction Systems Using Machine Learning
 
-This repository contains the code and analysis for my MIT 807 mini‑dissertation titled:
 
-**“A Risk‑Based Analytical Framework for Preventive Controls in Financial Transaction Systems Using Machine Learning.”**
+This repository contains the research work for the MIT807 mini‑dissertation at the University of Pretoria.
 
-The aim of this project is to investigate how machine learning models can be used as *preventive controls* in financial transaction systems by identifying high‑risk transactions before financial loss occurs.
+**Title:**  
+A Risk‑Based Analytical Framework for Preventive Controls in Financial Transaction Systems Using Machine Learning
+
+**Author:** Muphulusi Dzivhani (u18069682)  
+**Course:** MIT807 Research Project  
+**Institution:** University of Pretoria  
+**Year:** 2026
 
 ---
 
-## Project Overview
+## Overview
 
-Financial institutions rely on risk‑based controls to prevent fraud while minimising unnecessary disruption to legitimate customers.  
-This study evaluates different machine learning models on transactional data and analyses how their outputs can support preventive decision‑making.
+Financial fraud remains a major challenge for banks and digital payment platforms.  
+This project investigates how machine learning models can be used as *preventive controls* in financial transaction systems by identifying high‑risk transactions before financial loss occurs.
 
-The focus is not only on prediction accuracy, but on:
-- risk scoring,
-- trade‑offs between false positives and false negatives,
-- and model behaviour in highly imbalanced datasets.
+The study focuses on transactional data and evaluates how different models behave under extreme class imbalance, which is typical in real‑world fraud scenarios. Emphasis is placed on risk‑based decision‑making rather than accuracy alone.
 
 ---
 
 ## Dataset
 
-The experiments use a publicly available credit card fraud dataset obtained from Kaggle.
+The experiments use the **Credit Card Fraud Detection** dataset obtained from Kaggle:
 
-The dataset consists of anonymised transaction records, where each transaction is labelled as either legitimate or fraudulent.  
-No proprietary, employer, or sensitive personal data is used in this project.
+https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+The dataset consists of anonymised credit card transactions labelled as legitimate or fraudulent.  
+No proprietary, institutional, or employer data is used in this study.
 
 ---
 
@@ -33,21 +37,36 @@ No proprietary, employer, or sensitive personal data is used in this project.
 
 The experimental work follows a standard machine learning workflow:
 
-1. Data loading and preprocessing  
-2. Train‑test split and/or cross‑validation  
+1. Data preprocessing and exploration  
+2. Train–test splitting and/or cross‑validation  
 3. Model training  
-4. Model evaluation using appropriate metrics for imbalanced data  
+4. Model evaluation using metrics suitable for imbalanced data  
 5. Interpretation of results in the context of preventive financial controls  
 
 Baseline and comparative models include:
 - Logistic Regression (interpretable baseline)
-- Tree‑based or ensemble models (for comparison)
+- Tree‑based and ensemble models for comparison
 
-Evaluation focuses on metrics such as:
+Model performance is evaluated using:
 - Precision
 - Recall
-- ROC‑AUC / PR‑AUC
-rather than overall accuracy.
+- F1‑score
+- ROC‑AUC / PR‑AUC  
+
+Overall accuracy is not treated as the primary performance indicator due to the imbalanced nature of fraud data.
+
+---
+
+## Research Focus
+
+The study addresses the following themes:
+
+- Risk‑based fraud scoring in financial transactions  
+- Impact of class imbalance on model behaviour  
+- Trade‑offs between false positives and false negatives  
+- Use of machine learning as a preventive control mechanism  
+
+The goal is to develop an analytical framework that supports early intervention rather than post‑event detection.
 
 ---
 
