@@ -1,10 +1,9 @@
-# MIT807 – A Risk‑Based Analytical Framework for Preventive Controls in Financial Transaction Systems Using Machine Learning
-
+# MIT807 – Challenges and Opportunities in the Digital Transformation of Public Sector Service Delivery in South Africa
 
 This repository contains the research work for the MIT807 mini‑dissertation at the University of Pretoria.
 
 **Title:**  
-A Risk‑Based Analytical Framework for Preventive Controls in Financial Transaction Systems Using Machine Learning
+Challenges and Opportunities in the Digital Transformation of Public Sector Service Delivery in South Africa
 
 **Author:** Muphulusi Dzivhani (u18069682)  
 **Course:** MIT807 Research Project  
@@ -15,59 +14,98 @@ A Risk‑Based Analytical Framework for Preventive Controls in Financial Transac
 
 ## Overview
 
-Financial fraud remains a major challenge for banks and digital payment platforms.  
-This project investigates how machine learning models can be used as *preventive controls* in financial transaction systems by identifying high‑risk transactions before financial loss occurs.
+Digital transformation is a key priority for public sector organisations, yet service delivery often remains fragmented, slow, and difficult for citizens to navigate. This project investigates how **data-driven analysis** can support public sector digital transformation by improving visibility into service delivery patterns and performance.
 
-The study focuses on transactional data and evaluates how different models behave under extreme class imbalance, which is typical in real‑world fraud scenarios. Emphasis is placed on risk‑based decision‑making rather than accuracy alone.
+The study focuses on **public service request and complaint data** and demonstrates how an interpretable probabilistic model (**Multinomial Naïve Bayes**) can be used to:
 
----
+- classify and organise service requests into meaningful categories,
+- reveal trends in citizen service demand over time,
+- analyse resolution/response patterns (where available),
+- generate evidence-based insights that support service improvement initiatives.
 
-## Dataset
-
-The experiments use the **Credit Card Fraud Detection** dataset obtained from Kaggle:
-
-https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-
-The dataset consists of anonymised credit card transactions labelled as legitimate or fraudulent.  
-No proprietary, institutional, or employer data is used in this study.
-
----
-
-## Methodology
-
-The experimental work follows a standard machine learning workflow:
-
-1. Data preprocessing and exploration  
-2. Train–test splitting and/or cross‑validation  
-3. Model training  
-4. Model evaluation using metrics suitable for imbalanced data  
-5. Interpretation of results in the context of preventive financial controls  
-
-Baseline and comparative models include:
-- Logistic Regression (interpretable baseline)
-- Tree‑based and ensemble models for comparison
-
-Model performance is evaluated using:
-- Precision
-- Recall
-- F1‑score
-- ROC‑AUC / PR‑AUC  
-
-Overall accuracy is not treated as the primary performance indicator due to the imbalanced nature of fraud data.
+> **Important:** This research is not implementing a government platform. It provides analytical evidence that can inform digital transformation decisions.
 
 ---
 
 ## Research Focus
 
-The study addresses the following themes:
+The dissertation explores:
 
-- Risk‑based fraud scoring in financial transactions  
-- Impact of class imbalance on model behaviour  
-- Trade‑offs between false positives and false negatives  
-- Use of machine learning as a preventive control mechanism  
+- Challenges affecting digital public service delivery (fragmentation, inconsistent responsiveness, limited performance visibility)
+- Opportunities for improved service delivery using service request analytics
+- Interpretable classification using Naïve Bayes to support transparency and accountability
+- Practical, reproducible analysis using open data and Python
 
-The goal is to develop an analytical framework that supports early intervention rather than post‑event detection.
+---
+
+## Datasets (Public / Open)
+
+This project uses **publicly available** datasets suitable for reproducible research and Python-based analysis.
+
+Primary quantitative datasets include:
+
+1. **Service Request / Complaint Data (Benchmark)**
+   - Example: Kaggle municipal 311-style service request datasets  
+   - Used to model high-volume service request classification and trend analysis
+
+2. **Municipal Open Data (Supplementary)**
+   - Example: City of Cape Town Open Data Portal datasets (where applicable)
+   - Used for contextual service delivery indicators
+
+3. **Benchmarking Indicators (Context)**
+   - United Nations E-Government Survey / eGov Knowledgebase indicators
+
+Policy and regulatory documents (e.g., Government Gazettes, DPSA standards) are used for **contextual grounding**, not quantitative modelling.
+
+---
+
+## Methodology (High Level)
+
+The workflow follows a standard data science pipeline:
+
+1. Data ingestion and cleaning  
+2. Exploratory data analysis (EDA)  
+3. Text preprocessing:
+   - tokenisation, stopword removal, normalisation (where relevant)
+   - TF‑IDF vectorisation
+4. Classification using **Multinomial Naïve Bayes**
+5. Evaluation:
+   - accuracy, precision, recall, F1-score
+   - confusion matrix
+6. Visualisation:
+   - trends over time, category frequencies, and performance indicators
+
+---
+
+## Ethics and Data Protection
+
+- Only publicly available and/or anonymised datasets are used.
+- No confidential, taxpayer, or employer-proprietary data is included.
+- Analysis is performed at aggregate level and presented in a non-attributable manner.
+- The project follows responsible data use principles: transparency, proportionality, and accountability.
 
 ---
 
 ## Repository Structure
+
+```text
+.
+├── data/
+│   ├── raw/                 # Original downloaded datasets (do not modify)
+│   ├── processed/           # Cleaned/processed datasets for modelling
+│
+├── notebooks/
+│   ├── 01_eda.ipynb         # Exploratory data analysis
+│   ├── 02_preprocessing.ipynb
+│   ├── 03_naive_bayes.ipynb # Model training + evaluation
+│
+├── src/
+│   ├── preprocessing.py     # Text cleaning + TF-IDF functions
+│   ├── model.py             # Naïve Bayes training + evaluation utilities
+│
+├── reports/
+│   ├── figures/             # Saved charts and plots for the dissertation
+│   ├── proposal/            # Proposal drafts (LaTeX/PDF)
+│
+├── README.md
+└── requirements.txt
